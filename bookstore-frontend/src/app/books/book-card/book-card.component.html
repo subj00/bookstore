@@ -1,0 +1,9 @@
+<article>
+  <img [src]="dataAccessService.getImgPath(book)" alt="" />
+  <h3>{{ book.name }}</h3>
+  <p>{{ book.author }}</p>
+  <div class="action-row" *ngIf="!showFullImg">
+    <span>{{ book.price }} din</span>
+    <img [src]="'assets/cart.png'" alt="" (click)="onCartClick()" />
+  </div>
+</article>

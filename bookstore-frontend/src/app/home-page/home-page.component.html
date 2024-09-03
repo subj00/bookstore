@@ -1,0 +1,20 @@
+<section class="hero-section">
+  <div class="cite">
+    <p>Books are uniquely portable magic</p>
+    <p>Stephen King</p>
+  </div>
+  <div class="hero-cover-wrapper">
+    <img src="assets/cover.png" alt="" />
+  </div>
+</section>
+<section class="recommendations">
+  <h1 class="second-font">Nase preporuke</h1>
+  <div class="books-list-mini">
+    <app-book-card
+      *ngFor="let book of books"
+      [book]="book"
+      [showFullImg]="true"
+    ></app-book-card>
+  </div>
+  <button routerLink="books">Pogledaj ponudu</button>
+</section>

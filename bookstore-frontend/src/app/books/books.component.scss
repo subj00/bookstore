@@ -1,0 +1,23 @@
+.book-list {
+  padding: 20px;
+  text-align: center;
+}
+
+.book-list-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 2%;
+  align-items: stretch;
+  app-book-card {
+    display: flex;
+    width: 200px;
+    height: 100%;
+  }
+
+  div {
+    margin-bottom: 20px;
+  }
+}

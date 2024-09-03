@@ -1,0 +1,44 @@
+<header>
+  <button (click)="goBack()">Nazad</button>
+  <h1>Knjiga</h1>
+</header>
+
+<div class="book-container">
+  <div class="img-wrapper">
+    <img [src]="dataAccessService.getImgPath(book)" alt="" />
+    <button (click)="openFileUpload()">Upload Image</button>
+    <input
+      #fileInput
+      type="file"
+      style="display: none"
+      (change)="onFileSelected($event)"
+    />
+  </div>
+  <form action="">
+    <div class="form-row">
+      <label for="">Naziv knjige</label>
+      <input type="text" name="name" [(ngModel)]="book.name" />
+    </div>
+    <div class="form-row">
+      <label for="">Cena</label>
+      <input type="number" name="price" [(ngModel)]="book.price" />
+    </div>
+    <div class="form-row">
+      <label for="">Godina</label>
+      <input type="number" name="year" [(ngModel)]="book.year" />
+    </div>
+    <div class="form-row">
+      <label for="">Pisac</label>
+      <select [(ngModel)]="selectedAuthor" name="author">
+        <option
+          *ngFor="let author of authors; let i = index"
+          [ngValue]="author"
+        >
+          {{ author.firstName }} {{ author.lastName }}
+        </option>
+      </select>
+    </div>
+    <button *ngIf="!isEditMode" (click)="addBook()">Dodaj</button>
+    <button *ngIf="isEditMode" (click)="editBook()">Izmeni knjigu</button>
+  </form>
+</div>

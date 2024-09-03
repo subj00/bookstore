@@ -1,0 +1,44 @@
+<nav>
+  <div class="top-menu">
+    <ul class="user-menu">
+      <li *ngIf="!isLogged">
+        <a routerLink="/login" routerLinkActive="active">Prijavi se</a>
+      </li>
+
+      <li *ngIf="isLogged && !isAdmin" (click)="loggout()">
+        <a routerLink="/login" routerLinkActive="active">Odjavi se</a>
+      </li>
+      <li *ngIf="isLogged && isAdmin" (click)="loggout()">
+        <a routerLink="/admin/login" routerLinkActive="active">Odjavi se</a>
+      </li>
+    </ul>
+    <div *ngIf="!isAdmin" class="cart-wrapper">
+      <img src="assets/cart.png" alt="cart" (click)="toggleCart()" />
+      <span>{{ productNumber }}</span>
+
+      <app-cart
+        #appCart
+        [ngStyle]="{ display: cartOpened ? 'block' : 'none' }"
+      ></app-cart>
+    </div>
+  </div>
+
+  <header>
+    <ul class="main-menu">
+      <li *ngIf="!isAdmin">
+        <a routerLink="/" routerLinkActive="active">Pocetna</a>
+      </li>
+      <li *ngIf="!isAdmin">
+        <a routerLink="/books" routerLinkActive="active">Knjige</a>
+      </li>
+      <li *ngIf="isAdmin">
+        <a routerLink="/admin/books" routerLinkActive="active">Admin Knjige</a>
+      </li>
+      <li *ngIf="isAdmin">
+        <a routerLink="/admin/orders" routerLinkActive="active"
+          >Admin Porudzbine</a
+        >
+      </li>
+    </ul>
+  </header>
+</nav>

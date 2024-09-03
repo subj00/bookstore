@@ -1,0 +1,11 @@
+<section class="book-list">
+  <h1>Poruci knjigu</h1>
+  <div class="book-list-container">
+    <div *ngFor="let book of books; let i = index">
+      <app-book-card
+        [book]="book"
+        (addToCart)="handleAddToCart(book)"
+      ></app-book-card>
+    </div>
+  </div>
+</section>

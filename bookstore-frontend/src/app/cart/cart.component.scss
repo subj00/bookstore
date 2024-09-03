@@ -1,0 +1,48 @@
+@use "../../styles/colors";
+.cart-container {
+  background-color: colors.$primary;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid colors.$secondary;
+}
+header {
+  border-bottom: 1px solid colors.$secondary;
+  margin-bottom: 20px;
+}
+h1 {
+}
+
+.order-list {
+  .order-item {
+    .order-info {
+      display: flex;
+      justify-content: flex-start;
+      gap: 20px;
+    }
+    img {
+      width: 120px;
+      height: 150px;
+      object-fit: cover;
+    }
+    margin-bottom: 20px;
+  }
+}
+
+.order-quantity-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .quantity {
+    margin-right: 10px;
+  }
+  .quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    border-radius: 50%;
+    background-color: white;
+    height: 30px;
+    width: 30px;
+  }
+}

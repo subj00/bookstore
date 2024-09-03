@@ -1,0 +1,24 @@
+<section class="book-list">
+  <header>
+    <h1>Knjige:</h1>
+    <button routerLink="novi">Dodaj</button>
+  </header>
+  <div class="book-container">
+    <div class="single-book" *ngFor="let book of books; let i = index">
+      <div class="book-image">
+        <img [src]="dataAccessService.getImgPath(book)" alt="book.name" />
+      </div>
+      <div class="book-info">
+        <h2>Naziv: {{ book.name }}</h2>
+
+        <p>Godina: {{ book.year }}</p>
+
+        <p>Cena: {{ book.price }}</p>
+      </div>
+      <div class="book-actions">
+        <button routerLink="{{ book._id }}">Izmeni</button>
+        <button (click)="deleteBook(book._id!)">Obrisi</button>
+      </div>
+    </div>
+  </div>
+</section>

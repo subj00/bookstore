@@ -1,0 +1,48 @@
+@use "../../styles/colors";
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  .cite {
+    width: 40%;
+    text-align: center;
+    p {
+      font-family: "Square Peg", sans-serif;
+      font-size: 100px;
+      color: colors.$secondary;
+
+      &:last-child {
+        font-size: 50px;
+      }
+    }
+  }
+
+  .hero-cover-wrapper {
+    width: 60%;
+
+    img {
+      width: 100%;
+      max-height: 80vh;
+    }
+  }
+}
+.recommendations {
+  text-align: center;
+  & > h1 {
+    font-size: 70px;
+    color: colors.$secondary;
+    text-align: center;
+  }
+}
+
+.recommendations {
+  .books-list-mini {
+    display: flex;
+    justify-content: space-around;
+    app-book-card {
+      width: 30%;
+    }
+    margin-bottom: 50px;
+  }
+}

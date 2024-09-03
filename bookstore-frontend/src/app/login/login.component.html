@@ -1,0 +1,45 @@
+<section class="login-section">
+  <header>
+    <h1>{{ isRegister ? "Registracija" : "Prijava" }}</h1>
+  </header>
+  <form action="">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        [(ngModel)]="user.email"
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">Lozinka</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        [(ngModel)]="user.password"
+      />
+    </div>
+    <div class="form-group" *ngIf="isRegister">
+      <label for="password">Ime i Prezime</label>
+      <input
+        type="text"
+        id="fullName"
+        name="fullName"
+        required
+        [(ngModel)]="user.fullName"
+      />
+    </div>
+    <div class="form-group">
+      <button type="submit" (click)="authAction()">
+        {{ isRegister ? "Registruj se" : "Prijavi se" }}
+      </button>
+    </div>
+    <a (click)="toggleLoginRegister()">{{
+      isRegister ? "Imas nalog? Prijavi se!" : "Nemas nalog? Registruj se!"
+    }}</a>
+  </form>
+</section>

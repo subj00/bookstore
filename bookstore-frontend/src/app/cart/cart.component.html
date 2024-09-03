@@ -1,0 +1,38 @@
+<div class="cart-container">
+  <header>
+    <h1>Vasa korpa</h1>
+  </header>
+  <div class="order-list">
+    <ul>
+      <li *ngFor="let product of order.products">
+        <div class="order-item">
+          <div class="order-info">
+            <img [src]="dataAccessService.getImgPath(product)" alt="book" />
+            <div class="order-details">
+              <h2>{{ product.name }}</h2>
+              <p>{{ product.author }}</p>
+              <p>{{ product.price }} RSD</p>
+            </div>
+          </div>
+          <div class="order-quantity-control">
+            <span class="quantity">Kolicina: {{ product.quantity }}</span>
+            <span
+              (click)="increaseQuantityForBook(product)"
+              class="quantity-control"
+              >+</span
+            >
+            <span
+              (click)="decreaseQuantityForBook(product)"
+              class="quantity-control"
+              >-</span
+            >
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="order-summary">
+    <h2>Ukupno: {{ fullSum }} RSD</h2>
+    <button (click)="createOrder()">Poruci</button>
+  </div>
+</div>

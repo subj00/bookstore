@@ -1,0 +1,27 @@
+<section class="order-list">
+  <header><h1>LISTA PORUDZBINA</h1></header>
+  <div class="order-list-container">
+    <div class="order" *ngFor="let order of orders; let i = index">
+      <div class="order-header">
+        <h2>Porudzbina #{{ order._id }}</h2>
+        <h3>Korisnik: {{ order.user }}</h3>
+        <h3>Datum porudzbine: {{ formatDate(order.date!) }}</h3>
+        <!-- <p>{{ order.date | date : "dd.MM.yyyy HH:mm" }}</p> -->
+      </div>
+      <div class="order-body">
+        <div class="order-item" *ngFor="let book of order.products">
+          <div class="order-item-image">
+            <img
+              [src]="dataAccessService.getImgPath(book)"
+              alt="{{ book.name }}"
+            />
+          </div>
+          <div class="order-item-details">
+            <h3>{{ book.name }}</h3>
+            <p>Kolicina: {{ book.quantity }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

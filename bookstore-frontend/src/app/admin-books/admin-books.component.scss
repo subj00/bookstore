@@ -1,0 +1,49 @@
+@use "../../styles/colors";
+.book-list {
+  text-align: center;
+  padding: 10px;
+
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+    button {
+      position: absolute;
+      right: 10%;
+    }
+  }
+}
+
+.book-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .single-book {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    border-bottom: 2px solid colors.$secondary;
+    .book-image {
+      width: 10%;
+      img {
+        width: 150px;
+        height: 200px;
+      }
+      margin-right: 20px;
+    }
+    .book-info {
+      width: 70%;
+      text-align: start;
+    }
+    .book-actions {
+      width: 20%;
+      display: flex;
+      gap: 20px;
+    }
+  }
+}

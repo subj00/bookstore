@@ -1,0 +1,58 @@
+@use "../../styles/colors";
+
+a {
+  display: inline-block;
+  padding: 20px;
+  color: colors.$secondary;
+}
+nav {
+  background-color: colors.$primary;
+  height: 120px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top-menu {
+  padding: 0px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    a {
+      color: black;
+    }
+  }
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+header {
+  padding: 0px 30px;
+  ul.main-menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+  }
+}
+
+.cart-wrapper {
+  position: relative;
+  cursor: pointer;
+  app-cart {
+    position: absolute;
+    top: 100%;
+    width: 1000%;
+
+    right: 2%;
+  }
+}
